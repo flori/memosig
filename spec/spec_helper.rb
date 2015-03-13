@@ -1,4 +1,5 @@
 require 'rspec'
+require 'memosig'
 
 def config_dir
   Pathname.new(__FILE__).dirname + "config"

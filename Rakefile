@@ -11,7 +11,7 @@ GemHadar do
   description 'This excecutable supervises the memory usage of processes, '\
               'and sends a configurable signal to them if a configured limit '\
               'is exceeded.'
-  test_dir    'tests'
+  test_dir    'spec'
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', 'coverage', '.rvmrc',
               '.AppleDouble'
   readme      'README.md'
@@ -21,4 +21,7 @@ GemHadar do
   dependency  'tins', '~>1.0'
   dependency  'complex_config'
   development_dependency 'rake'
+  development_dependency 'rspec'
 end
+
+task :default => :spec

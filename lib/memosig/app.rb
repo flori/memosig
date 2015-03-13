@@ -14,7 +14,7 @@ class Memosig::App
 
   def run
     check_memory
-    sleep (@config.wait_period || 300)
+    sleep (@config.wait_period? || 300)
   end
 
   private
@@ -23,14 +23,17 @@ class Memosig::App
     processes.any? do |process|
       Memosig::Matcher.new(pattern, config).match? process
     end and return
-    error "pattern #{pattern.source.inspect} didn't match any processes"
+    error "pattern #{pattern.to_s.inspect} didn't match any processes"
+  end
+
+  def current_processes
+    Memosig::ProcStat.all
   end
 
   def check_memory
     output "checking memory limits"
-    processes = Memosig::ProcStat.all
+    processes = current_processes
     for (pattern, config) in Array(@config.processes)
-      pattern = Regexp.new(pattern.to_s)
       check_memory_for pattern, config, processes
     end
   end

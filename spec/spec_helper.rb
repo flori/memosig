@@ -6,6 +6,10 @@ if ENV['START_SIMPLECOV'].to_i == 1
 end
 
 require 'rspec'
+begin
+  require 'byebug'
+rescue LoadError
+end
 require 'memosig'
 
 def config_dir

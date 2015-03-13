@@ -11,6 +11,7 @@ Gem::Specification.new do |s|
   s.date = "2015-03-13"
   s.description = "This excecutable supervises the memory usage of processes, and sends a configurable signal to them if a configured limit is exceeded."
   s.email = "flori@ping.de"
+  s.executables = ["memosig"]
   s.extra_rdoc_files = ["README.md", "lib/memosig.rb", "lib/memosig/app.rb", "lib/memosig/proc_stat.rb", "lib/memosig/version.rb"]
   s.files = [".gitignore", "COPYING", "Gemfile", "README.md", "Rakefile", "VERSION", "bin/memosig", "lib/memosig.rb", "lib/memosig/app.rb", "lib/memosig/proc_stat.rb", "lib/memosig/version.rb", "memosig.gemspec", "spec/assets/memosig.yml", "spec/memosig/app_spec.rb", "spec/spec_helper.rb"]
   s.homepage = "http://flori.github.com/memosig"

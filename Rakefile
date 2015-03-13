@@ -18,6 +18,8 @@ GemHadar do
   title       "#{name.camelize}"
   licenses    << 'Apache-2.0'
 
+  executables << 'memosig'
+
   dependency  'tins', '~>1.0'
   dependency  'complex_config'
   development_dependency 'rake'

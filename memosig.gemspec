@@ -1,9 +1,9 @@
 # -*- encoding: utf-8 -*-
-# stub: memosig 0.0.0 ruby lib
+# stub: memosig 0.0.1 ruby lib
 
 Gem::Specification.new do |s|
   s.name = "memosig"
-  s.version = "0.0.0"
+  s.version = "0.0.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.require_paths = ["lib"]
@@ -14,6 +14,7 @@ Gem::Specification.new do |s|
   s.extra_rdoc_files = ["README.md", "lib/memosig.rb", "lib/memosig/app.rb", "lib/memosig/proc_stat.rb", "lib/memosig/version.rb"]
   s.files = [".gitignore", "COPYING", "Gemfile", "README.md", "Rakefile", "VERSION", "bin/memosig", "lib/memosig.rb", "lib/memosig/app.rb", "lib/memosig/proc_stat.rb", "lib/memosig/version.rb", "memosig.gemspec", "spec/assets/memosig.yml", "spec/spec_helper.rb"]
   s.homepage = "http://flori.github.com/memosig"
+  s.licenses = ["Apache-2.0"]
   s.rdoc_options = ["--title", "Memosig", "--main", "README.md"]
   s.rubygems_version = "2.4.5"
   s.summary = "Executable that supervises memory use of processes and signals them"

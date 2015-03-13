@@ -16,6 +16,7 @@ GemHadar do
               '.AppleDouble'
   readme      'README.md'
   title       "#{name.camelize}"
+  licenses    << 'Apache-2.0'
 
   dependency  'tins', '~>1.0'
   dependency  'complex_config'

@@ -1,0 +1,8 @@
+wait_period: 300
+processes:
+  "unicorn worker":
+    rss_max: 1073741824
+    signal: QUIT
+  "\\Asidekiq ":
+    rss_max: 1073741824
+    signal: TERM

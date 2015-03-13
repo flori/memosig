@@ -1,10 +1,16 @@
 require 'complex_config'
 require 'memosig/proc_stat'
+require 'memosig/output'
+require 'memosig/matcher'
 
 class Memosig::App
+  include Memosig::Output
+
   def initialize(config: nil)
     @config = ComplexConfig::Provider.config(config)
   end
+
+  attr_reader :config
 
   def run
     check_memory
@@ -13,41 +19,11 @@ class Memosig::App
 
   private
 
-  def process_prefix
-    "#{File.basename($0)} pid=#$$"
-  end
-
-  def output(message)
-    STDOUT.puts "#{process_prefix} #{message}"
-    STDOUT.flush
-  end
-
-  def error(message)
-    STDERR.puts "#{process_prefix} #{message}"
-    STDERR.flush
-  end
-
   def check_memory_for(pattern, config, processes)
-    matched = false
-    for process in processes
-      if process.command =~ pattern
-        if process.rss > config['rss_max']
-          output "restarting process pid=#{process.pid} "\
-            "pattern=#{pattern.source.inspect} "\
-            "rss #{process.rss}>#{config['rss_max']}"
-          Process.kill config['signal'], process.pid
-        else
-          output "no action on process pid=#{process.pid} "\
-            "pattern=#{pattern.source.inspect} "\
-            "rss #{process.rss}<=#{config['rss_max']}"
-        end
-        matched = true
-      end
-    end
-
-    unless matched
-      error "pattern #{pattern.source.inspect} didn't match any processes"
-    end
+    processes.any? do |process|
+      Memosig::Matcher.new(pattern, config).match? process
+    end and return
+    error "pattern #{pattern.source.inspect} didn't match any processes"
   end
 
   def check_memory

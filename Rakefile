@@ -24,6 +24,7 @@ GemHadar do
   dependency  'complex_config'
   development_dependency 'rake'
   development_dependency 'rspec'
+  development_dependency 'simplecov'
 end
 
 task :default => :spec

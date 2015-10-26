@@ -13,7 +13,7 @@ GemHadar do
               'is exceeded.'
   test_dir    'spec'
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', 'coverage', '.rvmrc',
-              '.AppleDouble'
+    '.AppleDouble', 'errors.lst'
   readme      'README.md'
   title       "#{name.camelize}"
   licenses    << 'Apache-2.0'

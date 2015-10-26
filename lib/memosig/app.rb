@@ -19,9 +19,14 @@ class Memosig::App
 
   private
 
+  def new_matcher(pattern, config)
+    Memosig::Matcher.new(pattern, config)
+  end
+
   def check_memory_for(pattern, config, processes)
-    processes.any? do |process|
-      Memosig::Matcher.new(pattern, config).match? process
+    processes.inject(false) do |matched, process|
+      m = new_matcher(pattern, config).match?(process)
+      matched || m
     end and return
     error "pattern #{pattern.to_s.inspect} didn't match any processes"
   end

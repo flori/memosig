@@ -13,7 +13,7 @@ GemHadar do
               'is exceeded.'
   test_dir    'spec'
   ignore      '.*.sw[pon]', 'pkg', 'Gemfile.lock', 'coverage', '.rvmrc',
-    '.AppleDouble', 'errors.lst'
+    '.AppleDouble', 'errors.lst', '.byebug_history'
   readme      'README.md'
   title       "#{name.camelize}"
   licenses    << 'Apache-2.0'
@@ -21,7 +21,7 @@ GemHadar do
   executables << 'memosig'
 
   dependency  'tins', '~>1.0'
-  dependency  'complex_config'
+  dependency  'complex_config', '~>0.9'
   development_dependency 'rake'
   development_dependency 'rspec'
   development_dependency 'simplecov'

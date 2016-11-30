@@ -38,7 +38,7 @@ class Memosig::App
   def check_memory
     output "checking memory limits"
     processes = current_processes
-    for (pattern, config) in Array(@config.processes)
+    for (pattern, config) in @config.processes
       check_memory_for pattern, config, processes
     end
   end

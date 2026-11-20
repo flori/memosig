@@ -1,4 +1,3 @@
-# vim: set filetype=ruby et sw=2 ts=2:
 
 require 'gem_hadar'
 
@@ -6,7 +5,7 @@ GemHadar do
   name        'memosig'
   author      'Florian Frank'
   email       'flori@ping.de'
-  homepage    "http://flori.github.com/#{name}"
+  homepage    "https://github.com/flori/#{name}"
   summary     'Executable that supervises memory use of processes and signals them'
   description 'This excecutable supervises the memory usage of processes, '\
               'and sends a configurable signal to them if a configured limit '\

@@ -5,7 +5,7 @@
 # by hand; it is rewritten on every `rake version` invocation.
 module Memosig
   # The current version of the Memosig gem as a String.
-  VERSION         = '0.1.0'
+  VERSION         = '0.1.1'
   VERSION_ARRAY   = VERSION.split('.').map(&:to_i) # :nodoc:
   VERSION_MAJOR   = VERSION_ARRAY[0] # :nodoc:
   VERSION_MINOR   = VERSION_ARRAY[1] # :nodoc:

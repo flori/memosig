@@ -27,7 +27,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency("rake".freeze, [">= 0".freeze])
   s.add_development_dependency("rspec".freeze, [">= 0".freeze])
   s.add_development_dependency("simplecov".freeze, [">= 0".freeze])
-  s.add_development_dependency("byebug".freeze, [">= 0".freeze])
+  s.add_development_dependency("debug".freeze, [">= 0".freeze])
   s.add_runtime_dependency("tins".freeze, ["~> 1.0".freeze])
   s.add_runtime_dependency("complex_config".freeze, ["~> 0.9".freeze])
 end
